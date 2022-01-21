@@ -24,6 +24,9 @@ interface ButtonProps {
   onClick?: () => void;
 }
 
+console.log('Hello');
+
+
 /**
  * Primary UI component for user interaction
  */
