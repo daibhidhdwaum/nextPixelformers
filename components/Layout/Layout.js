@@ -1,11 +1,11 @@
 import React from "react";
 
-const Layout = () => {
+const Layout = ({ children }) => {
   return (
     <div>
       <div>
         <header>Header</header>
-        <main>Main content</main>
+        <main>{children}</main>
       </div>
       <footer>Footer</footer>
     </div>
