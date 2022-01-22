@@ -1,6 +1,9 @@
 import Head from "next/head";
 import safeJsonStringify from "safe-json-stringify";
 import Image from "next/image";
+// import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+// import { BLOCKS } from "@contentful/rich-text-types";
+//  {documentToReactComponents(bio)}
 
 import { createClientFunc } from "./api/contentful";
 
