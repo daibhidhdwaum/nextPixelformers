@@ -1,6 +1,8 @@
 import Head from "next/head";
 import safeJsonStringify from "safe-json-stringify";
 import Image from "next/image";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { BLOCKS } from "@contentful/rich-text-types";
 
 import { createClientFunc } from "./api/contentful";
 
@@ -16,12 +18,10 @@ const Series = ({ series: { items } }) => {
         <div>
           {items.map((s) => {
             const { seriesName, seriesReference } = s.fields;
-            console.log(s);
             return (
               <>
                 <h2>{seriesName}</h2>
                 {seriesReference.map((sprites) => {
-                  console.log(sprites);
                   const {
                     spriteName,
                     primaryFunction,
@@ -39,6 +39,7 @@ const Series = ({ series: { items } }) => {
                       <p>{primaryFunction}</p>
                       <p>{altMode}</p>
                       <p>{faction}</p>
+                      {documentToReactComponents(bio)}
                     </div>
                   );
                 })}
